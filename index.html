@@ -413,7 +413,7 @@ async function loadPnlChart() {
   const colors = [];
 
   trades.forEach((t, i) => {
-    const pnl = parseFloat(t.pnl || (Math.random() * 40 - 15).toFixed(2));
+    const pnl = parseFloat(t.pnl || 0);
     cumPnl += pnl;
     labels.push(new Date(t.created_at).toLocaleDateString('tr-TR', {month:'short', day:'numeric'}));
     data.push(parseFloat(cumPnl.toFixed(2)));
